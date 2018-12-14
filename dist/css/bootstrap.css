@@ -76,6 +76,10 @@ hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -192,6 +196,9 @@ samp {
 pre {
   margin-top: 0;
   margin-bottom: 1rem;
+  display: block;
+  font-size: 87.5%;
+  color: #212529;
   overflow: auto;
   -ms-overflow-style: scrollbar;
 }
@@ -415,13 +422,6 @@ h6, .h6 {
   line-height: 1.2;
 }
 
-hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
 small,
 .small {
   font-size: 80%;
@@ -522,12 +522,6 @@ kbd kbd {
   padding: 0;
   font-size: 100%;
   font-weight: 700;
-}
-
-pre {
-  display: block;
-  font-size: 87.5%;
-  color: #212529;
 }
 
 pre code {
@@ -3173,7 +3167,7 @@ input[type="button"].btn-block {
 .dropright .dropdown-toggle::after {
   display: inline-block;
   margin-left: 0.255em;
-  vertical-align: 0.255em;
+  vertical-align: 0;
   content: "";
   border-top: 0.3em solid transparent;
   border-right: 0;
@@ -3183,10 +3177,6 @@ input[type="button"].btn-block {
 
 .dropright .dropdown-toggle:empty::after {
   margin-left: 0;
-}
-
-.dropright .dropdown-toggle::after {
-  vertical-align: 0;
 }
 
 .dropleft .dropdown-menu {
@@ -3205,13 +3195,13 @@ input[type="button"].btn-block {
 }
 
 .dropleft .dropdown-toggle::after {
-  display: none;
-}
+  display: none; /* duplicate selector of that immediately above; this does not seem to make sense */
+} 
 
 .dropleft .dropdown-toggle::before {
   display: inline-block;
   margin-right: 0.255em;
-  vertical-align: 0.255em;
+  vertical-align: 0;
   content: "";
   border-top: 0.3em solid transparent;
   border-right: 0.3em solid;
@@ -3220,10 +3210,6 @@ input[type="button"].btn-block {
 
 .dropleft .dropdown-toggle:empty::after {
   margin-left: 0;
-}
-
-.dropleft .dropdown-toggle::before {
-  vertical-align: 0;
 }
 
 .dropdown-menu[x-placement^="top"], .dropdown-menu[x-placement^="right"], .dropdown-menu[x-placement^="bottom"], .dropdown-menu[x-placement^="left"] {
@@ -4408,6 +4394,8 @@ input[type="button"].btn-block {
 .navbar-expand > .container-fluid {
   padding-right: 0;
   padding-left: 0;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 
 .navbar-expand .navbar-nav {
@@ -4422,12 +4410,6 @@ input[type="button"].btn-block {
 .navbar-expand .navbar-nav .nav-link {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
-}
-
-.navbar-expand > .container,
-.navbar-expand > .container-fluid {
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
 }
 
 .navbar-expand .navbar-collapse {
